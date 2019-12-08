@@ -10,6 +10,7 @@ class Video(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     video_link = models.CharField(max_length=255)
     img_src = models.CharField(max_length=255)
+    video_name = models.CharField(max_length=255)
     date = models.DateField()
 
     def __str__(self):
