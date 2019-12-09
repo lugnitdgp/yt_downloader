@@ -5,7 +5,7 @@ __pycache__/
 local_settings.py
 
 .env
-*.sqlite3
+db.sqlite3
 bin/
 lib/
 pip-selfcheck.json
