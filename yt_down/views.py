@@ -70,3 +70,4 @@ def get_download(request):
         except:
             message = "Enter a valid url"
         return render(request, "download.html", {'message': message})
+    return render(request, "download.html")
