@@ -50,24 +50,31 @@ def logout_user(request):
 
 def get_download(request):
     if request.method == 'GET':
-        url = request.GET['url']
-        try:
-            yt = YouTube(str(url))
-            title = yt.title
-            thumbnail = yt.thumbnail_url
-            stream = yt.streams.filter(res="360p").last()
-            path = download_path()
-            stream.download(path)
-            message = "Download in progress!"
-            video = Video()
-            curr_user = User.objects.get(username=request.session['curr_user'])
-            video.user = curr_user
-            video.video_link = str(url)
-            video.video_name = title
-            video.date = datetime.datetime.date()
-            video.img_src = thumbnail
-            video.save()
-        except:
-            message = "Enter a valid url"
-        return render(request, "download.html", {'message': message})
-    return render(request, "download.html")
+        if(request.GET.get('url')):
+            url = request.GET['url']
+            try:
+                yt = YouTube(str(url))
+                title = yt.title
+                # thumbnail = yt.thumbnail_url
+                stream = yt.streams.filter(res="360p").last()
+                path = download_path()
+                stream.download(path)
+                message = "Download in progress!"
+                video = Video()
+                curr_user = User.objects.get(username=request.session['curr_user'])
+                '''Used for testing purpose'''
+                # curr_user = User.objects.get(username="hello")
+                video.user = curr_user
+                video.video_link = str(url)
+                video.video_name = title
+                video.date = datetime.datetime.today()
+                # video.img_src = thumbnail
+                '''No Audio is saved, only video. Tried for this url https://www.youtube.com/watch?v=uzgp65UnPxA,
+                 it worked perfectly for someother url. Maybe because this video was saved in *.webm extension'''
+                video.save() 
+            except:
+                message = "Enter a valid url"
+                raise
+            return render(request, "download.html", {'message': message})
+        else:
+            return render(request, "download.html")
