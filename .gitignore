@@ -10,3 +10,5 @@ bin/
 lib/
 pip-selfcheck.json
 local/
+downloads/*.mp4
+downloads/*.webm
