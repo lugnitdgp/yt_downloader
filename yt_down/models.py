@@ -9,7 +9,8 @@ from django.contrib.auth.models import User
 class Video(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     video_link = models.CharField(max_length=255)
-    img_src = models.CharField(max_length=255)
+    img_src = models.CharField(
+        max_length=255, default='https://www.siechem.com/wp-content/uploads/2016/09/default-video.jpg')
     video_name = models.CharField(max_length=255)
     date = models.DateField()
 
