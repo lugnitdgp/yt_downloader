@@ -18,12 +18,11 @@ def signup(request):
         if form.is_valid():
             form.save(commit=True)
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                request.session['curr_user'] = username
-                return redirect('home')
+            password = form.cleaned_data.get('password1')
+            user1 = authenticate(username=username, password=password)
+            login(request, user1)
+            request.session['curr_user'] = username
+            return redirect('home')
     return render(request, 'signup.html', {'form': form})
 
 
@@ -31,9 +30,10 @@ def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(username=username, password=password)
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            print(user)
             request.session['curr_user'] = username
             return redirect('home')
         else:
@@ -61,7 +61,8 @@ def get_download(request):
                 stream.download(path)
                 message = "Download in progress!"
                 video = Video()
-                curr_user = User.objects.get(username=request.session['curr_user'])
+                curr_user = User.objects.get(
+                    username=request.session['curr_user'])
                 '''Used for testing purpose'''
                 # curr_user = User.objects.get(username="hello")
                 video.user = curr_user
@@ -71,7 +72,7 @@ def get_download(request):
                 # video.img_src = thumbnail
                 '''No Audio is saved, only video. Tried for this url https://www.youtube.com/watch?v=uzgp65UnPxA,
                  it worked perfectly for someother url. Maybe because this video was saved in *.webm extension'''
-                video.save() 
+                video.save()
             except:
                 message = "Enter a valid url"
                 raise
