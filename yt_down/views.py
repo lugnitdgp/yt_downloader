@@ -5,10 +5,17 @@ from django.shortcuts import render, redirect, Http404, HttpResponse
 from .forms import Userform
 from django.contrib.auth import authenticate, login, logout
 from pytube import YouTube
+from django.contrib.auth.decorators import login_required
 from downloader.path import download_path
 from .models import Video
 import datetime
 # Create your views here.
+
+
+def home(request):
+    if request.session['curr_user']:
+        return render(request, "home.html", {'user': request.session['curr_user']})
+    return render(request, "home.html", {'user': ''})
 
 
 def signup(request):
@@ -30,15 +37,14 @@ def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            print(user)
             request.session['curr_user'] = username
             return redirect('home')
         else:
             return render(request, 'login.html', {'error_message': 'Invalid ID, please register first'})
-    return render(request, 'login.html')
+    return render(request, 'login.html', {'error_message': ''})
 
 
 def logout_user(request):
@@ -48,6 +54,7 @@ def logout_user(request):
     return redirect('home')
 
 
+@login_required(login_url='/downloader/login')
 def get_download(request):
     if request.method == 'GET':
         if(request.GET.get('url')):
@@ -78,4 +85,4 @@ def get_download(request):
                 raise
             return render(request, "download.html", {'message': message})
         else:
-            return render(request, "download.html")
+            return render(request, "download.html", {'message': ''})
