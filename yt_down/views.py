@@ -13,7 +13,7 @@ import datetime
 
 
 def home(request):
-    if request.session['curr_user']:
+    if request.user.is_authenticated:
         return render(request, "home.html", {'user': request.session['curr_user']})
     return render(request, "home.html", {'user': ''})
 
@@ -47,6 +47,7 @@ def login_user(request):
     return render(request, 'login.html', {'error_message': ''})
 
 
+@login_required(login_url='/downloader/login')
 def logout_user(request):
     if request.session['curr_user']:
         del request.session['curr_user']

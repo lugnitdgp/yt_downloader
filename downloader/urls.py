@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
+from yt_down.views import home
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('downloader/', include('yt_down.urls'))
+    path('downloader/', include('yt_down.urls')),
+    path("", home, name='home')
 ]
