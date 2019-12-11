@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block body_block %}
+
+<div class="alert alert-danger">{{ message }}</div>
+<ul>
+  {% for video in videos %}
+  <li>
+    <div class="media">
+      <img src="{{ video.thumbnail }}" class="mr-3" />
+      <div class="media-body">
+        <h5 class="mt-0">{{ video.video_name }}</h5>
+        <br />
+        <p>Video link: {{ video.video_link }}</p>
+        <h7 class="mt-0">Downloaded on: {{ video.date }}</h7>
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

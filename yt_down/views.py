@@ -43,8 +43,8 @@ def login_user(request):
             request.session['curr_user'] = username
             return redirect('home')
         else:
-            return render(request, 'login.html', {'error_message': 'Invalid ID, please register first'})
-    return render(request, 'login.html', {'error_message': ''})
+            return render(request, 'login.html', {'error': True})
+    return render(request, 'login.html', {'error': ''})
 
 
 @login_required(login_url='/downloader/login')
@@ -87,3 +87,17 @@ def get_download(request):
             return render(request, "download.html", {'message': message})
         else:
             return render(request, "download.html", {'message': ''})
+
+
+@login_required(login_url='/downloader/login')
+def profile(request):
+    curr_user = User.objects.get(username=request.session['curr_user'])
+    try:
+        videos = Video.objects.get(user=curr_user)
+        message = ""
+        context = {'videos': videos, 'message': message}
+    except Video.DoesNotExist:
+        message = "You have no previous downloads"
+        context = {'videos': [], 'message': message}
+
+    return render(request, "profile.html", context)

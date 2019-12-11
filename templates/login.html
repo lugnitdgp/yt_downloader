@@ -2,12 +2,15 @@
 
 <h2>Login:</h2>
 <form method="post">
-  {% csrf_token %} 
-  Username: <input type="text" name="username">
-  <br>
-  Password: <input type="password" name="password">
-  <br>
+  {% csrf_token %} Username: <input type="text" name="username" />
+  <br />
+  Password: <input type="password" name="password" />
+  <br />
   <button type="submit" class="btn btn-success">Sign in!</button>
 </form>
-{{ error_message }}
-{% endblock %}
+{% if error %}
+<div class="alert aler-danger">
+  You need to register first!
+</div>
+<a href="{% url 'signup' %}">Click here to register!</a>
+{% endif %} {% endblock %}
