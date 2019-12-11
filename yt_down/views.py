@@ -93,11 +93,11 @@ def get_download(request):
 def profile(request):
     curr_user = User.objects.get(username=request.session['curr_user'])
     try:
-        videos = Video.objects.get(user=curr_user)
+        videos = Video.objects.filter(user=curr_user)
         message = ""
         context = {'videos': videos, 'message': message}
     except Video.DoesNotExist:
         message = "You have no previous downloads"
         context = {'videos': [], 'message': message}
-
+        raise
     return render(request, "profile.html", context)
