@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from downloader.path import download_path
 from .models import Video
 import datetime
+import os
 # Create your views here.
 
 
@@ -64,7 +65,8 @@ def get_download(request):
                 yt = YouTube(str(url))
                 title = yt.title
                 # thumbnail = yt.thumbnail_url
-                stream = yt.streams.filter(res="360p").last()
+                stream = yt.streams.filter(
+                    res="360p", file_extension='mp4').last()
                 path = download_path()
                 stream.download(path)
                 message = "Download in progress!"
@@ -101,3 +103,12 @@ def profile(request):
         context = {'videos': [], 'message': message}
         raise
     return render(request, "profile.html", context)
+
+
+@login_required(login_url="/downloader/login")
+def play_video(request, id):
+    video = Video.objects.get(id=id)
+    path = os.path.join(os.path.join(
+        download_path(), video.video_name), ".mp4")
+    context = {'path': path}
+    return render(request, "player.html", context)

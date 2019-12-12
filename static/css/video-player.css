@@ -1,0 +1,32 @@
+#video-player{
+    background-color: aquamarine:
+    display: inline-block;
+}
+img {
+    background-color: aqua;
+}
+#video-tree {
+    width: 640px;
+    height: 640px;
+}
+video{
+    height:100%;
+    width:100%;
+}
+#progress-tree{
+    background-color: cadetblue;
+}
+#progress {
+    height: 5px;
+    width: 50%;
+    background-color: black;
+}
+#button-tree{
+    height:50px;
+}
+#button-tree > * {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+} 
