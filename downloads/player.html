@@ -1,8 +1,7 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{%block title%} Song Page {% endblock %}</title>
+    <title></title>
     <meta charset="UTF-8" />
     <link
       rel="stylesheet"
@@ -26,9 +25,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
   </head>
   <body background="black">
-    {{ path }}
-    <video width="640" height="480" controls="controls" autoplay="autoplay">
-      <source src="{{ path }}" type="video/mp4"></source>
+    <video width="640" height="480" controls="controls" autoplay>
+      <source
+        src="file:///home/himanshu/Desktop/yt_wizard/downloader/downloads/Funny%20rubbit%26%2339%3Bs%2010%20sec%20video.webm"
+        type="video/webm"
+      />
       Your browser does not support the video tag.
     </video>
   </body>
