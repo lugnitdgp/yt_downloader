@@ -9,7 +9,9 @@ from django.contrib.auth.decorators import login_required
 from downloader.path import download_path
 from .models import Video
 import datetime
+from pytube.helpers import safe_filename
 import os
+import pathlib
 # Create your views here.
 
 
@@ -66,9 +68,9 @@ def get_download(request):
                 title = yt.title
                 # thumbnail = yt.thumbnail_url
                 stream = yt.streams.filter(
-                    res="360p", file_extension='mp4').last()
+                    res="360p", file_extension='webm').first()
                 path = download_path()
-                stream.download(path)
+                stream.download(path, filename=title)
                 message = "Download in progress!"
                 video = Video()
                 curr_user = User.objects.get(
@@ -108,7 +110,10 @@ def profile(request):
 @login_required(login_url="/downloader/login")
 def play_video(request, id):
     video = Video.objects.get(id=id)
-    path = os.path.join(os.path.join(
-        download_path(), video.video_name), ".mp4")
+    path = pathlib.Path(os.path.join(
+        download_path(), (safe_filename(video.video_name) + ".webm"))).as_uri()
+    '''path = pathlib.Path(download_path()).as_uri() + "/" + \
+        safe_filename(video.video_name)+".webm"'''
     context = {'path': path}
+    print(download_path(), path)
     return render(request, "player.html", context)
