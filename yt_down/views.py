@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
+from django.conf import settings
 from django.shortcuts import render, redirect, Http404, HttpResponse
 from .forms import Userform
 from django.contrib.auth import authenticate, login, logout
@@ -64,26 +65,20 @@ def get_download(request):
         if(request.GET.get('url')):
             url = request.GET['url']
             try:
-                yt = YouTube(str(url))
+                yt = YouTube(url)
                 title = yt.title
-                # thumbnail = yt.thumbnail_url
-                stream = yt.streams.filter(
-                    res="360p", file_extension='webm').first()
+                stream = yt.streams.filter(res='360p').first()
                 path = download_path()
-                stream.download(path, filename=title)
+                stream.download(path)
                 message = "Download in progress!"
                 video = Video()
                 curr_user = User.objects.get(
                     username=request.session['curr_user'])
-                '''Used for testing purpose'''
-                # curr_user = User.objects.get(username="hello")
                 video.user = curr_user
+                video.embed_video = str(url)
                 video.video_link = str(url)
                 video.video_name = title
                 video.date = datetime.datetime.today()
-                # video.img_src = thumbnail
-                '''No Audio is saved, only video. Tried for this url https://www.youtube.com/watch?v=uzgp65UnPxA,
-                 it worked perfectly for someother url. Maybe because this video was saved in *.webm extension'''
                 video.save()
             except:
                 message = "Enter a valid url"
@@ -103,17 +98,11 @@ def profile(request):
     except Video.DoesNotExist:
         message = "You have no previous downloads"
         context = {'videos': [], 'message': message}
-        raise
     return render(request, "profile.html", context)
 
 
 @login_required(login_url="/downloader/login")
 def play_video(request, id):
     video = Video.objects.get(id=id)
-    path = pathlib.Path(os.path.join(
-        download_path(), (safe_filename(video.video_name) + ".webm"))).as_uri()
-    '''path = pathlib.Path(download_path()).as_uri() + "/" + \
-        safe_filename(video.video_name)+".webm"'''
-    context = {'path': path}
-    print(download_path(), path)
+    context = {'video': video.embed_video, 'title': video.video_name}
     return render(request, "player.html", context)

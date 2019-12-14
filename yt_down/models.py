@@ -2,12 +2,14 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from embed_video.fields import EmbedVideoField
 from django.contrib.auth.models import User
 # Create your models here.
 
 
 class Video(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    embed_video = EmbedVideoField()
     video_link = models.CharField(max_length=255)
     img_src = models.CharField(
         max_length=255, default='https://www.siechem.com/wp-content/uploads/2016/09/default-video.jpg')
