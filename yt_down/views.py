@@ -93,8 +93,7 @@ def profile(request):
     curr_user = User.objects.get(username=request.session['curr_user'])
     try:
         videos = Video.objects.filter(user=curr_user)
-        message = ""
-        context = {'videos': videos, 'message': message}
+        context = {'videos': videos}
     except Video.DoesNotExist:
         message = "You have no previous downloads"
         context = {'videos': [], 'message': message}

@@ -1,8 +1,6 @@
-{% extends "base.html" %} {% block body_block %} {{ user }}
-<a href="">Home</a>
-<a href="{% url 'login' %}">Login</a>
-<a href="{% url 'download'%}">Download</a>
-<a href="{% url 'signup' %}">Sign-Up</a>
-<a href="{% url 'logout' %}">Logout</a>
-
-{% endblock %}
+{% extends "base.html" %} {% block body_block %} {% if user %}
+<script>
+  document.getElementById("login").style.display = "none";
+  document.getElementById("signup").style.display = "none";
+</script>
+{% endif %}{% endblock %}
