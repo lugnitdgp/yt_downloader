@@ -1,6 +1,6 @@
-{% extends "base.html" %} {% block body_block %}
-
+{% extends "base.html" %} {% block body_block %} {% if message %}
 <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
 <ul>
   {% for video in videos %}
   <li>
