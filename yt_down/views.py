@@ -18,7 +18,7 @@ import pathlib
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, "home.html", {'user': request.session['curr_user']})
+        return render(request, "home.html", {'user': request.session['curr_user'], 'logged': True})
     return render(request, "home.html", {'user': ''})
 
 
@@ -70,7 +70,7 @@ def get_download(request):
                 stream = yt.streams.filter(res='360p').first()
                 path = download_path()
                 stream.download(path)
-                message = "Download in progress!"
+                message = "Download Complete!"
                 video = Video()
                 curr_user = User.objects.get(
                     username=request.session['curr_user'])
