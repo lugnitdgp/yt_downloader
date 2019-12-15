@@ -83,9 +83,9 @@ def get_download(request):
             except:
                 message = "Enter a valid url"
                 raise
-            return render(request, "download.html", {'message': message})
+            return render(request, "download.html", {'message': message, 'logged': True, 'user': request.session['curr_user']})
         else:
-            return render(request, "download.html", {'message': ''})
+            return render(request, "download.html", {'message': '', 'logged': True, 'user': request.session['curr_user']})
 
 
 @login_required(login_url='/downloader/login')
@@ -93,10 +93,12 @@ def profile(request):
     curr_user = User.objects.get(username=request.session['curr_user'])
     try:
         videos = Video.objects.filter(user=curr_user)
-        context = {'videos': videos}
+        context = {'videos': videos, 'logged': True,
+                   'user': request.session['curr_user']}
     except Video.DoesNotExist:
         message = "You have no previous downloads"
-        context = {'videos': [], 'message': message}
+        context = {'videos': [], 'message': message, 'logged': True,
+                   'user': request.session['curr_user']}
     return render(request, "profile.html", context)
 
 
