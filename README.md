@@ -1,5 +1,29 @@
 # yt_downloader
 
-#How-To:
-1. Install the requirements by `pip install -r requirements.txt`
+## How To:
+1. Install the requirements by `pip install -r requirements.txt`.
 2. Rename the `.env.example` to `.env`, and your secret key as well as other info.
+<br><br>
+#### Execute the following in terminal:
+```
+virtualenv YouTubeDownloader
+cd YouTubeDownloader
+bin/activate
+git clone https://github.com/himanshu272/yt_downloader.git
+cd yt_downloader
+pip3 install -r requirements.txt
+cp .env.example .env
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
+```
+
+Now the server is running at `127.0.0.1:8000`
+
+## Contribute:
+1. Find an issue to resolve.
+2. Comment on the issue.
+3. Fork the repository
+4. Make changes and push.
+5. Make a pull request and wait for merging.
+
