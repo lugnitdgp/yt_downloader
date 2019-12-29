@@ -12,7 +12,6 @@ bin/activate
 git clone https://github.com/himanshu272/yt_downloader.git
 cd yt_downloader
 pip3 install -r requirements.txt
-cp .env.example .env
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
