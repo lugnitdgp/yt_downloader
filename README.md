@@ -21,6 +21,7 @@ python3 manage.py runserver
 Now the server is running at `127.0.0.1:8000`
 
 ## Contribute:
+Read the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> to know how to contribute
 1. Find an issue to resolve.
 2. Comment on the issue.
 3. Fork the repository
