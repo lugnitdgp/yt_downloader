@@ -1,12 +1,13 @@
 # yt_downloader
 
 ## How To:
-<br><br>
+<br>
 #### Execute the following in terminal:
 ```
-virtualenv YouTubeDownloader
+mkdir YouTubeDownloader
 cd YouTubeDownloader
-bin/activate
+python3 -m venv <environment name>
+source <environment name>/bin/activate
 git clone https://github.com/himanshu272/yt_downloader.git
 cd yt_downloader
 pip3 install -r requirements.txt
