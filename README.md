@@ -1,7 +1,7 @@
 # yt_downloader
 
 ## How To:
-<br>
+<br><br>
 #### Execute the following in terminal:
 ```
 mkdir YouTubeDownloader
