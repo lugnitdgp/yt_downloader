@@ -1,6 +1,6 @@
 # yt_downloader
 
-![header image](https://raw.github.com/lugnitdgp/yt_downloader/blob/master/stickgsoc.png)
+![](stickgsoc.png)
 
 ## How To:
 <br><br>
@@ -8,6 +8,7 @@
 ```
 mkdir YouTubeDownloader
 cd YouTubeDownloader
+sudo apt install python3-venv
 python3 -m venv <environment name>
 source <environment name>/bin/activate
 git clone https://github.com/himanshu272/yt_downloader.git
