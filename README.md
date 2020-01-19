@@ -1,6 +1,6 @@
 # yt_downloader
 
-![](stickgsoc.png)
+![](stickgsoc.png){:height="50%" width="50%"}
 
 ## How To:
 <br><br>
