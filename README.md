@@ -1,5 +1,7 @@
 # yt_downloader
 
+![header image](https://raw.github.com/lugnitdgp/yt_downloader/blob/master/stickgsoc.png)
+
 ## How To:
 <br><br>
 #### Execute the following in terminal:
