@@ -13,9 +13,13 @@
 <img src="stickgsoc.png" width="50%" height="50%">
 <br><br>
 ![](https://github.com/lugnitdgp/yt_downloader/blob/master/ezgif-5-438488145ffc.gif)
+
 ## How To:
-<br>
+<br><br>
+
 #### Execute the following in terminal:
+<br>
+
 ```
 mkdir YouTubeDownloader
 cd YouTubeDownloader
@@ -30,7 +34,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 ```
-
+<br>
 Now the server is running at `127.0.0.1:8000`
 
 ## Contribute:
