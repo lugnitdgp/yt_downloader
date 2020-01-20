@@ -11,9 +11,10 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com)
 <img src="stickgsoc.png" width="50%" height="50%">
-
-## How To:
 <br><br>
+![](https://github.com/lugnitdgp/yt_downloader/blob/master/ezgif-5-438488145ffc.gif)
+## How To:
+<br>
 #### Execute the following in terminal:
 ```
 mkdir YouTubeDownloader
