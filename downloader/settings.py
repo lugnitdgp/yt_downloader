@@ -11,6 +11,17 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import environ
+
+# Project Base Paths
+# project_root/your_app/settings.py - 2 = project_root/
+ROOT_DIR = environ.Path(__file__) - 2
+
+env = environ.Env()
+
+env_file = ROOT_DIR('SECRET_KEY.env')
+env.read_env(env_file)
+SECRET_KEY = env.str('SECRET_KEY')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -18,9 +29,6 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, '')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "SA"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
