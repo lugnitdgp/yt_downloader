@@ -4,6 +4,7 @@
 __pycache__/
 local_settings.py
 
+SECURITY_KEY.env
 .env
 db.sqlite3
 bin/
