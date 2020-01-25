@@ -1,11 +1,55 @@
 {% extends "base.html" %} {% block body_block %}
 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">YT-Down</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      {% if not logged %}
+      <li class="nav-item">
+        <a class="nav-link" href="/downloader/signup">Sign-Up</a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="/downloader/download">Download</a>
+      </li>
+    </ul>
+  </div>
+  <div class="mx-auto order-0">
+    <a class="navbar-brand mx-auto" href="/">DOWNLOADER</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target=".dual-collapse2"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      {% if logged %}
+      <li class="nav-item">
+        <a class="nav-link" href="/downloader/profile">{{ user }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/downloader/logout">Logout</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+
 <div class="jumbotron">
-  <h2>Login:</h2>
+  <h2 style="text-align: center;text-decoration: underline;">...LOGIN TO CONTINUE...</h2>
   <form method="post">
     {% csrf_token %}
     <div class="form-group">
-      <label>Username</label>
+      <label>Username:</label>
       <input
         class="form-control"
         type="text"
@@ -18,7 +62,7 @@
       >
     </div>
     <div class="form-group">
-      <label>Password</label>
+      <label>Password:</label>
       <input
         type="password"
         class="form-control"
@@ -26,14 +70,19 @@
         name="password"
         placeholder="Password"
       />
+      <small id="emailHelp" class="form-text text-muted"
+        >Your Password are secure with us.</small
+      >
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+  </br></br>
+    Not Registered Yet ? what's Waiting For :-) <a href="/downloader/signup">Sign-Up </a>
   </form>
   {% if error %}
   <div class="alert aler-danger">
-    You need to register first!
-  </div>
+   Invalid Credentials You need to register first!
   <a href="{% url 'signup' %}">Click here to register!</a>
+  </div>
   {% endif %}
 </div>
 {% endblock %}
