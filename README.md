@@ -29,7 +29,7 @@ source <environment name>/bin/activate
 git clone https://github.com/himanshu272/yt_downloader.git
 cd yt_downloader
 pip3 install -r requirements.txt
-pip3 install -e git+https://github.com/swiftyy-mage/pytube.git#egg=hyde
+
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
