@@ -66,6 +66,8 @@ def get_download(request):
             url = request.GET['url']
             if(request.GET.get('res')):
                 res=request.GET['res']
+                if(request.GET.get('dir')):
+                    dir=request.GET['dir']
             try:
                 yt = YouTube(url)
                 title = yt.title
@@ -73,7 +75,7 @@ def get_download(request):
                 print(stream)
                 path = download_path()
                 homedir=os.path.expanduser("~")
-                stream.download(path)
+                stream.download(homedir+'/'+dir)
                 message = "Download Complete!"
                 video = Video()
                 curr_user = User.objects.get(
