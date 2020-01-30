@@ -1,15 +1,31 @@
 {% extends "home.html" %} {% block content %}
 
 <h2>Download:</h2>
-<form class="form-inline" method="get">
+<form class=method="get">
   <div class="form-group">
-    <label for="URL">YouTube URL:</label>
+    <label for="URL">Enter YouTube URL:</label>
     <input type="url" name="url" class="form-control" id="email" />
     <small id="emailHelp" class="form-text text-muted"
-      >Enter a valid YouTube URL.</small
-    >
+      >Enter a valid YouTube URL.</small>
+
   </div>
-  <button type="submit" class="btn btn-default">Download</button>
+
+  <div class="form-group">
+    <label>Resolution</label>
+    <fieldset>
+        <input type="radio" name="res" id="res1" value="144p">
+        <label for="res1">144p</label>
+        <input type="radio" name="res" id="res2" value="240p">
+        <label for="res2">240p</label>
+        <input type="radio" name="res" id="res3" value="360p">
+        <label for="res3">360p SD</label>
+        <input type="radio" name="res" id="res3" value="720p">
+        <label for="res3">720p HD</label>
+        <input type="radio" name="res" id="res4" value="1080p">
+        <label for="res4">1080p HD</label>
+    </fieldset>
+</div>
+<button type="submit" class="save btn btn-success">Download</button>
 </form>
 
 {% if message %}

@@ -64,11 +64,14 @@ def get_download(request):
     if request.method == 'GET':
         if(request.GET.get('url')):
             url = request.GET['url']
+            if(request.GET.get('res')):
+                res=request.GET['res']
             try:
                 yt = YouTube(url)
                 title = yt.title
-                stream = yt.streams.filter(res='360p').first()
+                stream = yt.streams.filter(res='res').first()
                 path = download_path()
+                homedir=os.path.expanduser("~")
                 stream.download(path)
                 message = "Download Complete!"
                 video = Video()
