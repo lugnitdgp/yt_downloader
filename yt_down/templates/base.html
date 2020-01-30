@@ -1,7 +1,7 @@
 {% load static %}
 <html>
   <head>
-    <title>{%block title%} Song Page {% endblock %}</title>
+    <title>{%block title%} Yt-Downloader {% endblock %}</title>
     <meta charset="UTF-8" />
     <link
       rel="stylesheet"
@@ -22,10 +22,17 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
+    <style>
+    body{
+      background-image: url("{% static 'img/4685.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    </style>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="{% static 'img/youtube.png' %}" type="image">
   </head>
-  <body background="{% static 'img/4685.jpg' %}">
-    {% block body_block %} {% endblock %}
+  <body>
+    {% block body_block %}{% endblock %}
   </body>
 </html>
