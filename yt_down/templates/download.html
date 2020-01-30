@@ -1,7 +1,7 @@
 {% extends "home.html" %} {% block content %}
 
 <h2>Download:</h2>
-<form class=method="get">
+<form class="form" method="get">
   <div class="form-group">
     <label for="URL">Enter YouTube URL:</label>
     <input type="url" name="url" class="form-control" id="email" />
@@ -19,6 +19,8 @@
         <label for="res2">240p</label>
         <input type="radio" name="res" id="res3" value="360p">
         <label for="res3">360p SD</label>
+        <input type="radio" name="res" id="res3" value="480p">
+        <label for="res3">480p SD</label>
         <input type="radio" name="res" id="res3" value="720p">
         <label for="res3">720p HD</label>
         <input type="radio" name="res" id="res4" value="1080p">

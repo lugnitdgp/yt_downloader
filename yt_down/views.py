@@ -69,7 +69,8 @@ def get_download(request):
             try:
                 yt = YouTube(url)
                 title = yt.title
-                stream = yt.streams.filter(res='res').first()
+                stream = yt.streams.filter(res=res).first()
+                print(stream)
                 path = download_path()
                 homedir=os.path.expanduser("~")
                 stream.download(path)
