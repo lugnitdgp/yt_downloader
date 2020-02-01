@@ -76,6 +76,12 @@ def get_download(request):
                 try:   
                     if(res=="mp3") :
                         stream=yt.streams.filter(only_audio=True).first()
+                    elif(res=="webm"):
+                        stream=yt.streams.filter(only_audio=True , file_extension='webm').first()
+                    elif(res=="3gpp"):
+                        stream=yt.streams.filter(only_audio=True , file_extension='3gpp').first()
+                    elif(res=="vwebm"):
+                        stream=yt.streams.filter(only_video=True , file_extension='webm').first()
                     else:
                         stream = yt.streams.filter(res=res).first()
                     print(stream)
