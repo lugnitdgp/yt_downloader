@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block body_block %}
+{% extends "base.html" %} {% block body_block %}{% load socialaccount %}
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
@@ -77,6 +77,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </br></br>
     Not Registered Yet ? what's Waiting For :-) <a href="/downloader/signup">Sign-Up </a>
+    <p><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></p>
   </form>
   {% if error %}
   <div class="alert aler-danger">

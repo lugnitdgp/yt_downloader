@@ -22,5 +22,6 @@ from yt_down.views import home
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     path('downloader/', include('yt_down.urls')),
-    path("", home, name='home')
+    path("", home, name='home'),
+    path('accounts/', include('allauth.urls')),
 ]
