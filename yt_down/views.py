@@ -71,12 +71,16 @@ def get_download(request):
             try:
                 yt = YouTube(url)
                 title = yt.title
-                try:    
-                    stream = yt.streams.filter(res=res).first()
+               
+                try:   
+                    if(res=="mp3") :
+                        stream=yt.streams.filter(abr="128kbps").first()
+                    else:
+                        stream = yt.streams.filter(res=res).first()
                     print(stream)
                 except:
                      stream = yt.streams.filter(res='360p').first()
-                     message = "Selected Resolution is not Available. Downloaded in SD 360p quality !!"
+                     message = "Selected Format or Resolution is not Available. Downloaded in SD 360p quality !!"
                      
                 path = download_path()
                 homedir=os.path.expanduser("~")
@@ -85,7 +89,7 @@ def get_download(request):
                     message = "Download Complete!"
                 except:
                     yt.streams.filter(res='360p').first().download(homedir+'/'+dir)
-                    message = "Selected Resolution is not Available. Downloaded in SD 360p quality !!"
+                    message = "Selected  Format or Resolution is not Available. Downloaded in SD 360p quality !!"
                 video = Video()
                 curr_user = User.objects.get(
                     username=request.session['curr_user'])
