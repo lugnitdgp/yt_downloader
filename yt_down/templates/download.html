@@ -1,15 +1,18 @@
 {% extends "home.html" %} {% block content %}
 
-<h2>Download:</h2>
+<h2><strong>Download : <strong></h2>
+	<br>
+	<br>
 <form class="form-inline" method="get">
   <div class="form-group">
-    <label for="URL">YouTube URL:</label>
+    <label for="URL">YouTube URL:     </label>
     <input type="url" name="url" class="form-control" id="email" />
-    <small id="emailHelp" class="form-text text-muted"
-      >Enter a valid YouTube URL.</small
+    <small id="emailHelp" class="form-text text-black"
+      ><strong>      Enter a valid YouTube URL.    <strong></small
     >
   </div>
-  <button type="submit" class="btn btn-default">Download</button>
+
+  <button type="submit" class="btn btn-success" >Download</button>
 </form>
 
 {% if message %}
