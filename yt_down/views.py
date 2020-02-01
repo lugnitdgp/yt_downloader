@@ -72,9 +72,10 @@ def get_download(request):
                 yt = YouTube(url)
                 title = yt.title
                
+               
                 try:   
                     if(res=="mp3") :
-                        stream=yt.streams.filter(abr="128kbps").first()
+                        stream=yt.streams.filter(only_audio=True).first()
                     else:
                         stream = yt.streams.filter(res=res).first()
                     print(stream)
