@@ -31,6 +31,7 @@ cd yt_downloader
 pip3 install -r requirements.txt
 
 python3 manage.py makemigrations
+cp(space).env.example(space).env
 python3 manage.py migrate
 python3 manage.py runserver
 ```
