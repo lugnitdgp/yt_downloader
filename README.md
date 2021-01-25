@@ -2,8 +2,6 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 <br>
-
- 
 [![GSoC Heat 2020](https://img.shields.io/badge/GSoC%20Heat-2020-orange.svg)](https://nitdgpos.github.io/gsoc_heat)
 <br>
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
