@@ -65,21 +65,29 @@ def get_download(request):
         if(request.GET.get('url')):
             url = request.GET['url']
             try:
-                yt = YouTube(url)
-                title = yt.title
-                stream = yt.streams.filter(res='360p').first()
+               
                 path = download_path()
-                stream.download(path)
-                message = "Download Complete!"
-                video = Video()
-                curr_user = User.objects.get(
-                    username=request.session['curr_user'])
-                video.user = curr_user
-                video.embed_video = str(url)
-                video.video_link = str(url)
-                video.video_name = title
-                video.date = datetime.datetime.today()
-                video.save()
+                downloadPath = request.GET['downloadPath'] # gets download path
+                if os.path.exists(downloadPath) :  # checks if given directory exists and then downloads
+                    yt = YouTube(url)
+                    title = yt.title
+                    stream = yt.streams.filter(res='360p').first()                   
+                    stream.download(downloadPath)
+                    message = "Download Complete!"
+                    video = Video()
+                    curr_user = User.objects.get(
+                        username=request.session['curr_user'])
+                    video.user = curr_user
+                    video.embed_video = str(url)
+                    video.video_link = str(url)
+                    video.video_name = title
+                    video.date = datetime.datetime.today()
+                    video.save()
+                else:                    
+                    #stream.download(path)  # old command
+                    message = "Invalid Download Location!" # prints if download location is not right
+                
+                
             except:
                 message = "Enter a valid url"
                 raise
