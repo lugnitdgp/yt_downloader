@@ -23,8 +23,31 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+      
+      /* Background image is centered vertically and horizontally at all times */
+      background-position: center center;
+      
+      /* Background image doesn't tile */
+      background-repeat: no-repeat;
+      
+     
+      background-attachment: fixed;
+      
+      /* This is what makes the background image rescale based
+        on the container's size */
+      background-size: cover;
+      
+      
+      background-color: #464646;
+    }
+    </style>
   </head>
+
+
   <body background="{% static 'img/4685.jpg' %}">
     {% block body_block %} {% endblock %}
+
   </body>
 </html>
