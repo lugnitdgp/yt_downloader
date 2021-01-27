@@ -1,6 +1,8 @@
 body{
     margin: 0%;
-    padding: 0%    
+    padding: 0%;
+    font-family: 'Staatliches', cursive;   
+    
 }
 
 .navbar{
@@ -12,9 +14,10 @@ body{
 .navbar-brand{
     float: left;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 25px;
     padding: 0.2cm 0.7cm;
     color: white;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .navbar-nav{
@@ -29,7 +32,7 @@ body{
 .navbar-nav .nav-item a{
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 20px;
     padding: 0.9cm 0.7cm;
     color: white;
 }

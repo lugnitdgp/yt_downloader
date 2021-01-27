@@ -1,0 +1,50 @@
+input[type=url]{
+    border: 2px solid green;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.yt{
+    color: red;
+    margin-right: 4px;
+}
+
+.down{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20vh;
+}
+
+.form-group{
+    text-align: center;
+    font-size: 22px;
+}
+
+.but{
+    text-align: center;
+}
+
+.btn{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive; 
+    text-decoration: none;
+    border: 1px solid seagreen;
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: seagreen;
+    transition-duration: 0.4s;
+    color: white;
+    text-decoration: none;
+}
+
+small{
+    font-size: 14px;
+}

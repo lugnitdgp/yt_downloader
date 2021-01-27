@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block body_block %}
     <nav>
         <div class="navbar">
-            <a href="a" class="navbar-brand">DOWNLOADER</a>
+            <a href="/" class="navbar-brand">DOWNLOADER</a>
             <button class="toggle-collapse">
                 <i class="fas fa-align-center fa-lg"></i>
             </button>
@@ -15,10 +15,10 @@
                     </li>
                     {% if not logged %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/downloader/login">Login</a>
+                        <a class="nav-link" href="/downloader/login">LOGIN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/downloader/signup">Sign-Up</a>
+                        <a class="nav-link" href="/downloader/signup">SIGN-UP</a>
                     </li>
                     {% endif %}
                     {% if logged %}
@@ -26,11 +26,11 @@
                         <a class="nav-link" href="/downloader/profile">{{ user }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/downloader/logout">Logout</a>
+                        <a class="nav-link" href="/downloader/logout">LOGOUT</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a href="/downloader/download">DOWNLOAD</a>
+                        <a href="/downloader/download">DOWNLOAD VIDEOS</a>
                     </li>
                 </ul>
             </div>
