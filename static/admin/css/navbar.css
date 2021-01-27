@@ -1,0 +1,83 @@
+body{
+    margin: 0%;
+    padding: 0%    
+}
+
+.navbar{
+    width: 100%;
+    background-color: rgb(0, 0, 24);
+    color: white;
+}
+
+.navbar-brand{
+    float: left;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 0.2cm 0.7cm;
+    color: white;
+}
+
+.navbar-nav{
+    margin: 0%;
+}
+
+.navbar .navbar-nav .nav-item{
+    display: inline;
+    list-style: none;
+}
+
+.navbar-nav .nav-item a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0.9cm 0.7cm;
+    color: white;
+}
+
+.toggle-collapse{
+    float: right;
+    width: 45px;
+    height: 32px;
+    margin: 0.4cm 0.7cm;
+    background-color: transparent;
+    color: rgba(232, 232, 232, 0.3);
+    border: 1px solid rgba(232, 232, 232, 0.3);
+    cursor: pointer;
+    display: none;
+}
+
+.toggle-collapse:hover{
+    color: rgb(232, 232, 232);
+}
+
+@media screen and (max-width: 456px){
+    .navbar-brand{
+        display: inline-block;
+        float: none;
+    }
+
+    .toggle-collapse{
+        display: inline-block;
+    }
+    .navbar-nav{
+        color: white;
+        padding: 0%
+    }
+    .navbar .navbar-nav .nav-item{
+        display: block;
+        list-style: none;
+
+    }
+
+    .navbar-collapse{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        height: 0vh;
+        transition: all 499ms ease;
+    }
+
+    .collapse{
+        height: 100vh;
+    }
+}
