@@ -11,6 +11,7 @@ from downloader.path import download_path
 from .models import Video
 import datetime
 from pytube.helpers import safe_filename
+from pytube import Playlist
 import os
 import pathlib
 # Create your views here.
@@ -65,21 +66,46 @@ def get_download(request):
         if(request.GET.get('url')):
             url = request.GET['url']
             try:
-                yt = YouTube(url)
-                title = yt.title
-                stream = yt.streams.filter(res='360p').first()
-                path = download_path()
-                stream.download(path)
-                message = "Download Complete!"
-                video = Video()
-                curr_user = User.objects.get(
-                    username=request.session['curr_user'])
-                video.user = curr_user
-                video.embed_video = str(url)
-                video.video_link = str(url)
-                video.video_name = title
-                video.date = datetime.datetime.today()
-                video.save()
+                if "playlist?list" in url : # checking whether url is playlist
+                    playlist = Playlist(url)
+                    
+                    path = download_path()
+                    video = Video()
+                    curr_user = User.objects.get(
+                        username=request.session['curr_user'])
+                    video.user = curr_user
+                    
+                    for playlistvideo in playlist.videos:
+                        
+                        playlistvideo.streams.filter(res='360p').first().download(path)
+                        # downloading entire playlist
+                        
+                    message = "Playlist Downloaded!"
+                    for videourl in playlist.video_urls:
+                        yt = YouTube(videourl)
+                        title = yt.title 
+                        video.embed_video = str(videourl)
+                        video.video_link = str(videourl)
+                        video.video_name = title
+                        video.date = datetime.datetime.today()
+                        video.save()
+                else:
+                    yt = YouTube(url) # if url is of a single video
+                    title = yt.title
+                    stream = yt.streams.filter(res='360p').first()
+                    path = download_path()
+                    stream.download(path)
+                    message = "Download Complete!"
+                    video = Video()
+                    curr_user = User.objects.get(
+                        username=request.session['curr_user'])
+                    video.user = curr_user
+                    video.embed_video = str(url)
+                    video.video_link = str(url)
+                    video.video_name = title
+                    video.date = datetime.datetime.today()
+                    video.save()
+                
             except:
                 message = "Enter a valid url"
                 raise
