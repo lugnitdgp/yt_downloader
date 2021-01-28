@@ -1,14 +1,15 @@
 {% extends "home.html" %} {% block content %}
-
+<div class="download">
 <h2 class="down">Download Videos</h2>
 <form class="form-inline" method="get">
   <div class="form-group">
-    <label class="yt" for="URL">YouTube Video  =></label>
-    <input type="url" name="url" class="form-control" id="email" />
-    <small id="emailHelp" class="form-text text-muted">Enter a valid YouTube URL.</small>
+    <label class="yt item" for="URL">Enter YouTube Video Link </label>
+    <input type="url" name="url" class="item" id="email" />
+    <small id="emailHelp" class="item">Enter a valid YouTube URL.</small>
   </div>
   <div class="but"><button type="submit" class="btn btn-default">Download</button></div>
 </form>
+</div>
 
 {% if message %}
 <script>
