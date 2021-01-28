@@ -1,8 +1,122 @@
 {% extends "base.html" %} {% block body_block %}
+<style>
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      to right top,
+      #00ffb3,
+      #0099ff
+    );
+  }
+  .container{
+    background: white;
+    width: 65%;
+    min-height: 30%;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255,0.7),
+      rgba(255,255,255,0.3)
+    );
+    padding-left: 50px;
+    border-radius: 2rem;
+  }
+  .container h2{
+    margin-top: 5px;
+    padding-top: 4.5%;
+    font-weight: bold;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 45px;
+    color: rgb(45, 82, 192);
 
-<h2>Sign up:</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p}}
-  <button type="submit" class="btn btn-success">Sign in!</button>
-</form>
+  }
+  .container button{
+    font-weight: bold;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    background-color: blue;
+    border-radius: 3px;
+    height: 5%;
+    width: 10%;
+    border-style: none;
+
+  }
+  .circle1{
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255,0.8),
+      rgba(255,255,255,0.2)
+    );
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .circle1{
+    bottom: 10%;
+    left: 12%;
+  }
+  .circle3{
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255,0.8),
+      rgba(255,255,255,0.2)
+    );
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .circle3{
+    bottom: 4%;
+    left: 9%;
+  }
+  .circle5,.circle6{
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255,0.8),
+      rgba(255,255,255,0.2)
+    );
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .circle5{
+    top: 10%;
+    left: 5%;
+  }
+  .circle6{
+    bottom: 3%;
+    right: 5%;
+  }
+  .container form{
+    padding-top: 3%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: seagreen
+  }
+  .icon,.icon2,.icon3{
+    display: none;
+  }
+</style>
+  <section class="container">
+    <h2>Sign Up</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p}}
+      <button type="submit" class="btn btn-success">Sign in!</button>
+    </form>
+  </section>
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="circle3"></div>
+  <div class="circle4"></div>
+  <div class="circle5"></div>
+  <div class="circle6"></div>
 {% endblock %}
