@@ -4,36 +4,57 @@
     <title>{%block title%} Song Page {% endblock %}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    /-->
     <link href="../../static/admin/img/fontsawesome_icons/css/all.css" rel="stylesheet">
     
     <link rel="stylesheet" href="../../static/admin/css/navbar.css">
-    <!--link rel="stylesheet" href="../../static/admin/css/download.css"-->
-    <!--script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com"-->
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Staatliches&display=swap" rel="stylesheet">
   </head>
   <body>
-  <!--body background="{% static 'img/4685.jpg' %}"-->
+    <nav>
+      <div class="navbar">
+          <a href="/" class="navbar-brand">YT-DOWNLOADER</a>
+          <button class="toggle-collapse">
+              <i class="fas fa-align-center fa-lg"></i>
+          </button>
+          <div class="navbar-collapse">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a href="/">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/downloader/download">DOWNLOAD VIDEOS</a>
+                  </li>
+                  {% if not logged %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="/downloader/login">LOGIN</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/downloader/signup">SIGN-UP</a>
+                  </li>
+                  {% endif %}
+                  {% if logged %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="/downloader/profile">{{ user }}</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/downloader/logout">LOGOUT</a>
+                  </li>
+                  {% endif %}
+                  
+              </ul>
+          </div>
+      </div>
+  </nav>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>
+      $(document).ready(function(){
+          $('.toggle-collapse').click(function(){
+              $('.navbar-collapse').toggleClass("collapse");
+              $('.navbar').toggleClass("bg");
+          })
+      });
+  </script>
     {% block body_block %} {% endblock %}
   </body>
 </html>

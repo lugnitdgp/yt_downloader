@@ -68,19 +68,19 @@ small{
 }
 
 @media screen and (max-width: 540px){
-    .form-group{
+    .download .form-group{
         margin: 0 auto;
         width: 210px;
     }
 
-    .form-group label{
+    .download .form-group label{
         display: block;
         text-align: left;
         float: right;
         margin: 0;
     }
 
-    .form-group input[type=url]{
+    .download .form-group input[type=url]{
         display: block;
         text-align: left;
         float: right;
