@@ -1,17 +1,140 @@
 {% extends "home.html" %} {% block content %}
-
-<h2>Download:</h2>
-<form class="form-inline" method="get">
-  <div class="form-group">
-    <label for="URL">YouTube URL:</label>
-    <input type="url" name="url" class="form-control" id="email" />
-    <small id="emailHelp" class="form-text text-muted"
-      >Enter a valid YouTube URL.</small
-    >
-  </div>
-  <button type="submit" class="btn btn-default">Download</button>
-</form>
-
+<style>
+  .container{
+    display: none;
+  }
+  .circle6,.icon3,.circle5,.icon2{
+    display: none;
+  }
+  .container1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 20%;
+    background: white;
+    width: 50%;
+    min-height: 50vh;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255,0.7),
+      rgba(255,255,255,0.3)
+    );
+    padding-left: 50px;
+    border-radius: 2rem;
+  }
+  h2{
+    overflow: hidden;
+    padding-top: 30px;
+    color: rgb(34, 189, 155);
+  }
+  .form-group{
+    overflow: hidden;
+    padding-top: 40px;
+    padding-left: 30px;
+  }
+  .form-group label{
+    display: none;
+    float: left;
+    justify-content: flex-start;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    background-color: blue;
+    color: white;
+  }
+  .form-group small{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  .form-group input[type="url"]{
+    overflow: hidden;
+    padding: 20px;
+    min-height: 17px;
+    width: 320px;
+    border-radius: 2rem;
+    border: none;
+  }
+  .form-inline button{
+    margin-top: 6%;
+    margin-left: 20%;
+    background-color: green;
+    color:white;
+  }
+  .circle8,.circle7{
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255,255,255,0.8),
+      rgba(255,255,255,0.2)
+    );
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .circle8{
+    top: 10%;
+    left: 5%;
+  }
+  .circle7{
+    bottom: 3%;
+    right: 5%;
+  }
+  @media(max-width: 768px) {
+    .form-group small{
+      position: absolute;
+      top: 33%;
+    } 
+    .form-group input[type="url"]{
+    padding: 17px;
+    margin-left: -10%;
+    min-height: 17px;
+    width: 250px;
+    border-radius: 2rem;
+    border: none;
+    }
+    .icon{
+      position: absolute;
+      left: 21%;
+    }
+    .icon4{
+      position: absolute;
+      right: 7%;
+    }
+  }
+  @media(max-width: 576px) {
+    .form-group small{
+      position: absolute;
+      top: 37%;
+      right:40%;
+    }
+    .form-group input[type="url"]{
+    padding: 15px;
+    margin-left: -10%;
+    min-height: 17px;
+    width: 150px;
+    border-radius: 2rem;
+    border: none;
+  }
+}
+</style>
+<section class="container1">
+  <h2>Download Your Files Here!</h2>
+  <form class="form-inline" method="get">
+    <div class="form-group">
+      <label for="URL">YouTube URL:</label>
+      <input type="url" name="url" class="form-control" id="email" placeholder="Enter a valid YouTube URL."/>
+      <small id="emailHelp" class="form-text text-muted"
+        >Enter a valid YouTube URL.</small
+      >
+    </div>
+    <br>
+    <button type="submit" class="btn btn-default">Download</button>
+  </form>
+</section>
+<div class="circle8"></div>
+<div class="circle7"></div>
 {% if message %}
 <script>
   alert("{{ message }}");
