@@ -14,6 +14,27 @@ body{
     background-position-y: 0px;
 }
 
+.btn{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive; 
+    text-decoration: none;
+    border: 1px solid rgb(207, 2, 2);
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(206, 0, 0);
+    transition-duration: 0.4s;
+    color: white;
+    text-decoration: none;
+}
+
 .navbar{
     width: 100%;
     background-color: rgba(97, 0, 0, 0.3);

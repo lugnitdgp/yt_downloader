@@ -1,19 +1,20 @@
 input[type=url]{
-    border: 2px solid green;
+    border: 2px solid rgb(255, 0, 0);
     border-radius: 4px;
     padding: 10px;
 }
 
 
 .yt{
-    color:rgb(65, 160, 21);
+    color:rgb(255, 0, 0);
     margin-right: 4px;
+    filter: drop-shadow(0 0 20px black);
 }
 
 .download{
     margin: auto;
     margin-top: 22vh;
-    background-color: rgba(99, 0, 0, 0.336);
+    background-color: rgba(71, 0, 0, 0.445);
     backdrop-filter: blur(5px);
     height: 40vh;
     width: 40vw;
@@ -34,7 +35,7 @@ input[type=url]{
     margin-top: 7vh;
     text-align: center;
     font-size: 22px;
-    filter: drop-shadow(0 0 10px black);
+    filter: drop-shadow(0 0 20px black);
 }
 
 .but{
@@ -47,7 +48,7 @@ input[type=url]{
     font-size: 20px;
     font-family: 'Staatliches', cursive; 
     text-decoration: none;
-    border: 1px solid rgb(80, 167, 58);
+    border: 1px solid rgb(197, 4, 4);
     display: inline-block;
     background-color: white;
     padding: 10px;
@@ -56,7 +57,7 @@ input[type=url]{
 }
 
 .btn:hover{
-    background-color: rgb(62, 143, 55);
+    background-color: rgb(143, 55, 55);
     transition-duration: 0.4s;
     color: white;
     text-decoration: none;
