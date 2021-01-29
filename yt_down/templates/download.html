@@ -7,10 +7,23 @@
     <input type="url" name="url" class="item" id="email" />
     <small id="emailHelp" class="item">Enter a valid YouTube URL.</small>
   </div>
-  <div class="but"><button type="submit" class="btn btn-default">Download</button></div>
+  <div class="but"><button onclick=" show() " type="submit" class="btn btn-default">Download</button></div>
 </form>
 </div>
 
+
+  <div class="body" id="MyDiv" style="display:none">
+    Downloading...
+  </div>
+
+
+
+<script>
+  function show(){
+    const d = document.getElementById("MyDiv");
+    d.style.display = "block";
+  }
+</script>
 {% if message %}
 <script>
   alert("{{ message }}");

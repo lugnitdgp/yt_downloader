@@ -68,6 +68,14 @@ small{
     color: rgb(255, 255, 255);
 }
 
+.body {
+    margin: auto;
+    height: 10vh;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
 @media screen and (max-width: 540px){
     .download .form-group{
         margin: 0 auto;
