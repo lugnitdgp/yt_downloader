@@ -70,10 +70,29 @@ small{
 
 .body {
     margin: auto;
-    height: 10vh;
+    margin-top: 20vh;
+    height: 50%;
+    width: 46%;
     font-size: 20px;
-    color: white;
-    background-color: black;
+    color: rgb(253, 99, 10);
+    background-color: transparent;
+    background-image: url(../../img/down_red.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;
+    font-size: 30px;
+    justify-content: center;
+    border: 2px solid red;
+    border-radius: 40px;
+    box-shadow: 0 0 40px black, 0 0 30px black, 0 0 20px black;
+    
+}
+
+.body .text{
+    margin-top: 20vh;
+    filter: drop-shadow(0 0 5px black);
+    
 }
 
 @media screen and (max-width: 540px){
@@ -104,5 +123,14 @@ small{
         margin: none;
         padding: 20px 0;
         text-align: center;
+    }
+
+    .body{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 25.3vh;
+        width: 100%;
+        background-position-y: 0%;
+        padding-top: 10vh;
     }
 }
