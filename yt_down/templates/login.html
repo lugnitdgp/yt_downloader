@@ -29,9 +29,10 @@
   </form>
   {% if error %}
   <div class="alert aler-danger">
-    You need to register first!
+    You need to register first!<br>
+    <a href="{% url 'signup' %}">Click here to register!</a>
   </div>
-  <a href="{% url 'signup' %}">Click here to register!</a>
+  
   {% endif %}
 </div>
 {% endblock %}

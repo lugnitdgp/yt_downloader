@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../static/admin/img/fontsawesome_icons/css/all.css" rel="stylesheet">
     
-    <link id="stl" rel="stylesheet" href="../../static/admin/css/navbar.css">
+    <link id="stl" rel="stylesheet" href="">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Staatliches&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body onload="setcss()">
     <nav>
       <div class="navbar">
           <a href="/" class="navbar-brand">YT-DOWNLOADER</a>
@@ -27,6 +27,12 @@
                   <li class="nav-item">
                       <a href="/downloader/download">DOWNLOAD VIDEOS</a>
                   </li>
+                  <li class="nav-item">
+                    <button class="nav-link" onclick="swapStyleSheet('../../static/admin/css/navbar.css')">Red Theme</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" onclick="swapStyleSheet('../../static/admin/css/navbar_blue.css')">Blue Theme</button>
+                </li>
                   {% if not logged %}
                   <li class="nav-item">
                       <a class="nav-link" href="/downloader/login">LOGIN</a>
@@ -42,13 +48,8 @@
                   <li class="nav-item">
                       <a class="nav-link" href="/downloader/logout">LOGOUT</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/" id="rt">Red Theme</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/" id="bt">Blue Theme</a>
-                </li>
                   {% endif %}
+                  
                   
               </ul>
           </div>
@@ -63,6 +64,23 @@
               $('.navbar').toggleClass("bg");
           })
       });
+
+      function setcss(){
+          const sheet = localStorage.getItem('stylesheet');
+          if (sheet == null){
+            document.getElementById('stl').setAttribute('href', '../../static/admin/css/navbar.css');
+          }
+          else {
+            document.getElementById('stl').setAttribute('href', sheet);
+          }
+          
+
+      }
+
+      function swapStyleSheet(sheet){
+          document.getElementById('stl').setAttribute('href', sheet);
+          localStorage.setItem('stylesheet', sheet);
+      }
   </script>
     {% block body_block %} {% endblock %}
   </body>

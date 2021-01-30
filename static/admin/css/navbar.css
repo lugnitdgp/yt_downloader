@@ -61,6 +61,22 @@ body{
     margin: 0%;
 }
 
+.nav-item button{
+    border: none;
+    background-color: inherit;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-item button:focus{
+    border: none;
+    text-decoration: none;
+}
+
 .navbar .navbar-nav .nav-item{
     display: inline;
     list-style: none;
