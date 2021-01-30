@@ -78,7 +78,7 @@ small{
     background-color: transparent;
     background-image: url(../../img/down_red.gif);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     text-align: center;
     font-size: 30px;
@@ -128,9 +128,14 @@ small{
     .body{
         margin-left: 0;
         margin-right: 0;
+        padding: 0;
         margin-top: 25.3vh;
+        height: 33.5vh;
         width: 100%;
         background-position-y: 0%;
-        padding-top: 10vh;
+    }
+
+    .body .text{
+        margin-top: 10vh;
     }
 }
