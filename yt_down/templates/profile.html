@@ -1,23 +1,25 @@
-{% extends "home.html" %} {% block content %} {% if message %}
+{% extends "base.html" %} {% block body_block %} 
+{% if message %}
 <div class="alert alert-danger">{{ message }}</div>
 {% endif %}
-<ul>
-  {% for video in videos %}
-  <li>
-    <div class="media">
-      <img src="{{ video.img_src }}" class="mr-3" />
-      <div class="media-body">
-        <h5 class="mt-0">{{ video.video_name }}</h5>
-        <br />
-        <p>Video link: {{ video.video_link }}</p>
-        <h7 class="mt-0">Downloaded on: {{ video.date }}</h7>
-        <a class="btn btn-primary" href="{% url 'play_video' id=video.id %}"
-          >Click here to play!</a
-        >
+<div class="videos">
+  <ul class="list">
+    {% for video in videos %}
+    <li>
+      <div class="media">
+        <img src="{{ video.img_src }}" class="mr-3" />
+        <div class="media-body">
+          <h2 class="mt-0">{{ video.video_name }}</h2>
+          <br />
+          <p><a href="{{ video.video_link }}">click to play on youtube</a></p>
+          <h7 class="mt-0">Downloaded on: {{ video.date }}</h7>
+          <a class="btn btn-primary" href="{% url 'play_video' id=video.id %}">Click here to play!</a>
+        </div>
       </div>
-    </div>
-  </li>
-  {% endfor %}
-</ul>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
 
 {% endblock %}

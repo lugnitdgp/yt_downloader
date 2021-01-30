@@ -67,6 +67,7 @@ def get_download(request):
             try:
                 yt = YouTube(url)
                 title = yt.title
+                img = yt.thumbnail_url
                 stream = yt.streams.filter(res='360p').first()
                 path = download_path()
                 stream.download(path)
@@ -75,6 +76,7 @@ def get_download(request):
                 curr_user = User.objects.get(
                     username=request.session['curr_user'])
                 video.user = curr_user
+                video.img_src = img
                 video.embed_video = str(url)
                 video.video_link = str(url)
                 video.video_name = title
