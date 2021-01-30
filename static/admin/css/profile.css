@@ -26,9 +26,13 @@
 }
 
 .list{
-    margin: 0;
+    margin: 0 40px;
     padding: 0;
-    margin-left: 40px;
+    list-style: none;
+}
+
+.list hr{
+    filter: drop-shadow(0 0 4px black);
 }
 
 .media-body{
@@ -38,12 +42,33 @@
 .list p a{
     text-decoration: none;
     color: rgb(255, 60, 0);
+    filter: drop-shadow(0 0 4px black);
 }
 
 .list p a:hover{
     color: rgb(255, 230, 0);
 }
 
+.list h7{
+    filter: drop-shadow(0 0 4px black);
+}
+
 .media img{
     border-radius: 10px;
+    filter: drop-shadow(0 0 4px black);
+    height: 21vh;
+}
+
+@media screen and (max-width: 540px){
+    .videos{
+        width: 100%;
+    }
+
+    .media img{
+        height: 10vh;
+    }
+
+    .list{
+        margin: 0;
+    }
 }

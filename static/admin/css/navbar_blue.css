@@ -1,7 +1,7 @@
-@import "download.css";
-@import "login.css";
-@import "profile.css";
-@import "home.css";
+@import "download_blue.css";
+@import "login_blue.css";
+@import "profile_blue.css";
+@import "home_blue.css";
 
 body{
     margin: 0%;

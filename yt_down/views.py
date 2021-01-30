@@ -21,6 +21,8 @@ def home(request):
         return render(request, "home.html", {'user': request.session['curr_user'], 'logged': True})
     return render(request, "home.html", {'user': ''})
 
+def instructions(request):
+    return render(request, "instructions.html")
 
 def signup(request):
     form = Userform()
@@ -109,3 +111,4 @@ def play_video(request, id):
     video = Video.objects.get(id=id)
     context = {'video': video.embed_video, 'title': video.video_name}
     return render(request, "player.html", context)
+

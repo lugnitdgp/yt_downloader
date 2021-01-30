@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../static/admin/img/fontsawesome_icons/css/all.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="../../static/admin/css/navbar.css">
+    <link id="stl" rel="stylesheet" href="../../static/admin/css/navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Staatliches&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -20,6 +20,9 @@
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a href="/">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/downloader/instructions" >Instructions</a>
                   </li>
                   <li class="nav-item">
                       <a href="/downloader/download">DOWNLOAD VIDEOS</a>
@@ -39,6 +42,12 @@
                   <li class="nav-item">
                       <a class="nav-link" href="/downloader/logout">LOGOUT</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/" id="rt">Red Theme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" id="bt">Blue Theme</a>
+                </li>
                   {% endif %}
                   
               </ul>
