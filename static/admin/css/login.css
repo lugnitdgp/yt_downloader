@@ -1,7 +1,7 @@
 .Login{
     margin: auto;
     margin-top: 22vh;
-    background-color: rgba(99, 0, 0, 0.336);
+    background-color: rgba(51, 0, 0, 0.336);
     backdrop-filter: blur(5px);
     height: 40vh;
     width: 40vw;
@@ -73,18 +73,24 @@
 
 .login .alert{
     text-align: center;
-    color: white;
+    color: rgb(255, 0, 0);
     filter: drop-shadow(0 0 5px black);
 }
 
 .login a{
     text-align: center;
     text-decoration: none;
-    color:rgb(197, 0, 0);
+    color:rgb(212, 95, 0);
 }
 
 .login a:hover{
-    color: rgb(231, 85, 0);
+    color: rgb(231, 189, 0);
+}
+
+.new_user{
+    text-align: center;
+    color: white;
+    filter: drop-shadow(0 0 10px black);
 }
 
 

@@ -2,6 +2,7 @@
 @import "login.css";
 @import "profile.css";
 @import "home.css";
+@import "greetings.css";
 
 body{
     margin: 0%;
@@ -55,6 +56,7 @@ body{
     color: white;
     font-family: 'Permanent Marker', cursive;
     margin-top: 2vh;
+    cursor: default;
 }
 
 .navbar-nav{
@@ -114,6 +116,14 @@ body{
 
 }
 
+.logout{
+    float: right;
+}
+
+.profile{
+    float: right;
+}
+
 @media screen and (max-width: 540px){
     .navbar-brand{
         display: inline-block;
@@ -150,5 +160,13 @@ body{
 
     .bg{
         background-color: rgba(145, 0, 0, 0.692);
+    }
+
+    .profile{
+        float: none;
+    }
+
+    .logout{
+        float: none;
     }
 }

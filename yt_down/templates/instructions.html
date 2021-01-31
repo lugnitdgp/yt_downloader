@@ -2,11 +2,18 @@
 <div class="instructions" id="instructions">
 <h1>How to use this tool</h1>
     <ul>
-        <li>Login with a suitable id, or register</li>
-        <li>Go To download videos and enter url of the required video</li>
+        <li><a class="link" href="/downloader/login">LOGIN</a> with a suitable id, or <a class="link" href="/downloader/signup">Register</a></li>
+        <li>Go To <a class="link" href="/downloader/download">DOWNLOAD VIDEOS</a> and enter url of the required video</li>
         <li>Click on the Download button and wait for the download to finish</li>
         <li>You will find the download in the downloads folder of the project</li>
-        <li>You will get your download history in your profile</li>
+        <li>You will get your download history in your 
+            {% if not logged %}
+            profile
+            {% endif %}
+            {% if logged %}
+            <a class="link" href="/downloader/profile">profile</a>
+            {% endif %}
+        </li>
     </ul>
 </div>
 

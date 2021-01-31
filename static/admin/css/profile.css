@@ -59,6 +59,10 @@
     height: 21vh;
 }
 
+
+
+
+
 @media screen and (max-width: 540px){
     .videos{
         width: 100%;
@@ -71,4 +75,6 @@
     .list{
         margin: 0;
     }
+
+    
 }

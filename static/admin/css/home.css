@@ -27,6 +27,15 @@
     text-decoration: underline;
 }
 
+.instructions .link{
+    text-decoration: none;
+    color: rgb(255, 60, 0);
+}
+
+.instructions .link:hover{
+    color: rgb(255, 230, 0);
+}
+
 @media screen and (max-width: 540px){
     .instructions{
         width: 100%;

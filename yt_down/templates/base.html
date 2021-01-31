@@ -12,7 +12,7 @@
   <body onload="setcss()">
     <nav>
       <div class="navbar">
-          <a href="/" class="navbar-brand">YT-DOWNLOADER</a>
+          <h1 class="navbar-brand">YT-DOWNLOADER</h1>
           <button class="toggle-collapse">
               <i class="fas fa-align-center fa-lg"></i>
           </button>
@@ -28,26 +28,27 @@
                       <a href="/downloader/download">DOWNLOAD VIDEOS</a>
                   </li>
                   <li class="nav-item">
-                    <button class="nav-link" onclick="swapStyleSheet('../../static/admin/css/navbar.css')">Red Theme</button>
+                    <button class="nav-link" id="css_red" onclick="swapStyleSheet('../../static/admin/css/navbar.css')">Switch to Red Theme</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" onclick="swapStyleSheet('../../static/admin/css/navbar_blue.css')">Blue Theme</button>
+                    <button class="nav-link" id="css_blue" onclick="swapStyleSheet('../../static/admin/css/navbar_blue.css')">Switch to Blue Theme</button>
                 </li>
                   {% if not logged %}
-                  <li class="nav-item">
+                  <li class="nav-item logout">
                       <a class="nav-link" href="/downloader/login">LOGIN</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/downloader/signup">SIGN-UP</a>
+                      <a class="nav-link" href="/downloader/signup">Register</a>
                   </li>
                   {% endif %}
                   {% if logged %}
-                  <li class="nav-item">
-                      <a class="nav-link" href="/downloader/profile">{{ user }}</a>
+                  <li class="nav-item logout">
+                    <a class="nav-link" href="/downloader/logout">LOGOUT</a>
+                </li>
+                  <li class="nav-item profile">
+                      <a class="nav-link" href="/downloader/profile">Hi &nbsp; {{ user }}! ..</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/downloader/logout">LOGOUT</a>
-                  </li>
+                  
                   {% endif %}
                   
                   
@@ -73,6 +74,13 @@
           else {
             document.getElementById('stl').setAttribute('href', sheet);
           }
+
+          if (sheet == '../../static/admin/css/navbar.css'){
+              document.getElementById('css_red').style.display = "none";
+          }
+          else if (sheet == '../../static/admin/css/navbar_blue.css'){
+              document.getElementById('css_blue').style.display = "none";
+          }
           
 
       }
@@ -80,6 +88,7 @@
       function swapStyleSheet(sheet){
           document.getElementById('stl').setAttribute('href', sheet);
           localStorage.setItem('stylesheet', sheet);
+          reload();
       }
   </script>
     {% block body_block %} {% endblock %}

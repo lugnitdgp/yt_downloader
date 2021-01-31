@@ -27,10 +27,12 @@
     </div>
     <div class="but"><button type="submit" class="btn btn-primary">Login</button></div>
   </form>
+
+  <div class="new_user">New user? <br> <a href="{% url 'signup' %}">Click here to register!</a></div>
   {% if error %}
   <div class="alert aler-danger">
-    You need to register first!<br>
-    <a href="{% url 'signup' %}">Click here to register!</a>
+    Incorrect Credentials..<br>
+    
   </div>
   
   {% endif %}
