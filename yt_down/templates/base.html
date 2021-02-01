@@ -81,15 +81,25 @@
           else if (sheet == '../../static/admin/css/navbar_blue.css'){
               document.getElementById('css_blue').style.display = "none";
           }
-          
+            
 
       }
 
       function swapStyleSheet(sheet){
           document.getElementById('stl').setAttribute('href', sheet);
           localStorage.setItem('stylesheet', sheet);
-          reload();
+          
+          if (sheet == '../../static/admin/css/navbar.css'){
+              document.getElementById('css_red').style.display = "none";
+              document.getElementById('css_blue').style.display = "inline-block";
+          }
+          else if (sheet == '../../static/admin/css/navbar_blue.css'){
+              document.getElementById('css_blue').style.display = "none";
+              document.getElementById('css_red').style.display = "inline-block";
+          }
       }
+
+
   </script>
     {% block body_block %} {% endblock %}
   </body>
