@@ -1,0 +1,141 @@
+input[type=url]{
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+.yt{
+    color:rgb(255, 0, 0);
+    margin-right: 4px;
+    filter: drop-shadow(0 0 20px black);
+}
+
+.download{
+    margin: auto;
+    margin-top: 22vh;
+    background-color: rgba(71, 0, 0, 0.445);
+    backdrop-filter: blur(5px);
+    height: 40vh;
+    width: 40vw;
+    padding: 20px;
+    box-shadow: 0 0 40px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.down{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+
+}
+
+.form-group{
+    margin-top: 7vh;
+    text-align: center;
+    font-size: 22px;
+    filter: drop-shadow(0 0 20px black);
+}
+
+.but{
+    text-align: center;
+}
+
+.btn{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive; 
+    text-decoration: none;
+    border: 1px solid rgb(197, 4, 4);
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(143, 55, 55);
+    transition-duration: 0.4s;
+    color: white;
+    text-decoration: none;
+}
+
+small{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+.body {
+    margin: auto;
+    margin-top: 20vh;
+    height: 50%;
+    width: 46%;
+    font-size: 20px;
+    color: rgb(253, 99, 10);
+    background-color: transparent;
+    background-image: url(../../img/down_red.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-size: 30px;
+    justify-content: center;
+    border: 2px solid red;
+    border-radius: 40px;
+    box-shadow: 0 0 40px black, 0 0 30px black, 0 0 20px black;
+    
+}
+
+.body .text{
+    margin-top: 20vh;
+    filter: drop-shadow(0 0 5px black);
+    
+}
+
+@media screen and (max-width: 540px){
+    .download .form-group{
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .download .form-group label{
+        display: block;
+        text-align: left;
+        float: right;
+        margin: 0;
+    }
+
+    .download .form-group input[type=url]{
+        display: block;
+        text-align: left;
+        float: right;
+    }
+
+    .form-group small{
+        display: inline-block;
+    }
+
+    .download{
+        width: 100%;
+        margin: none;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .body{
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        margin-top: 25.3vh;
+        height: 33.5vh;
+        width: 100%;
+        background-position-y: 0%;
+    }
+
+    .body .text{
+        margin-top: 10vh;
+    }
+}

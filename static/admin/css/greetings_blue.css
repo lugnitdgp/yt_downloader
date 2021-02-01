@@ -1,0 +1,17 @@
+.greetings{
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 40px;
+    filter: drop-shadow(0 0 3px black), drop-shadow(0 0 5px black);
+}
+
+.greetings a{
+    text-decoration: none;
+    color: rgb(0, 140, 255);
+}
+
+.greetings a:hover{
+    color: rgb(0, 238, 255);
+}

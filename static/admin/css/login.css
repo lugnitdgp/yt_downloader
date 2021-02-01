@@ -1,78 +1,146 @@
-/* LOGIN FORM */
-
-body.login {
-    background: #f8f8f8;
+.Login{
+    margin: auto;
+    margin-top: 22vh;
+    background-color: rgba(51, 0, 0, 0.336);
+    backdrop-filter: blur(5px);
+    height: 40vh;
+    width: 40vw;
+    padding: 20px;
+    box-shadow: 0 0 40px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0);
+    border-radius: 20px;
 }
 
-.login #header {
-    height: auto;
-    padding: 5px 16px;
+.signup{
+    margin: 10vh 30%;
+    background-color: rgba(99, 0, 0, 0.336);
+    backdrop-filter: blur(5px);
+    width: 40vw;
+    padding: 10px;
+    box-shadow: 0 0 40px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0);
+    border-radius: 20px;
+    display: inline-block;
+    color: red;
+    filter: drop-shadow(0 0 10px black);
 }
 
-.login #header h1 {
-    font-size: 18px;
-}
-
-.login #header h1 a {
-    color: #fff;
-}
-
-.login #content {
-    padding: 20px 20px 0;
-}
-
-.login #container {
-    background: #fff;
-    border: 1px solid #eaeaea;
-    border-radius: 4px;
-    overflow: hidden;
-    width: 28em;
-    min-width: 300px;
-    margin: 100px auto;
-}
-
-.login #content-main {
-    width: 100%;
-}
-
-.login .form-row {
-    padding: 4px 0;
-    float: left;
-    width: 100%;
-    border-bottom: none;
-}
-
-.login .form-row label {
-    padding-right: 0.5em;
-    line-height: 2em;
-    font-size: 1em;
-    clear: both;
-    color: #333;
-}
-
-.login .form-row #id_username, .login .form-row #id_password {
-    clear: both;
-    padding: 8px;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-.login span.help {
-    font-size: 10px;
-    display: block;
-}
-
-.login .submit-row {
-    clear: both;
-    padding: 1em 0 0 9.4em;
-    margin: 0;
-    border: none;
-    background: none;
-    text-align: left;
-}
-
-.login .password-reset-link {
+.sh{
     text-align: center;
+    color: white;
+    font-size: 30px;
+    filter: drop-shadow(0 0 10px black);
+}
+
+.log{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+
+}
+
+
+
+.btn{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive; 
+    text-decoration: none;
+    border: 1px solid rgb(160, 0, 0);
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px black);
+}
+
+.btn:hover{
+    background-color: rgb(206, 0, 0);
+    transition-duration: 0.4s;
+    color: white;
+    text-decoration: none;
+}
+
+.login label{
+    color: rgb(255, 0, 0);
+    filter: drop-shadow(0 0 20px black);
+}
+
+.login .form-group{
+    margin-top: 3vh;
+}
+
+.login .alert{
+    text-align: center;
+    color: rgb(255, 0, 0);
+    filter: drop-shadow(0 0 5px black);
+}
+
+.login a{
+    text-align: center;
+    text-decoration: none;
+    color:rgb(212, 95, 0);
+}
+
+.login a:hover{
+    color: rgb(231, 189, 0);
+}
+
+.new_user{
+    text-align: center;
+    color: white;
+    filter: drop-shadow(0 0 10px black);
+}
+
+
+
+@media screen and (max-width: 540px){
+    .login .form-group{
+        margin: 14px auto;
+        margin-bottom: 25px;
+        width: 210px;
+    }
+
+    .login label{
+        display: block;
+        text-align: center;
+        margin: 0;
+    }
+
+    .login input{
+        display: block;
+        text-align: left;
+        float: right;
+    }
+
+    .login small{
+        display: inline-block;
+    }
+
+    .login{
+        width: 100%;
+        margin: none;
+        padding: 20px 0;
+        text-align: center;
+        height: 50vh;
+    }
+
+    .login .but{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .btn{
+        margin: 0 auto;
+    }
+
+    .signup{
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+        text-align: center;
+    }
 }

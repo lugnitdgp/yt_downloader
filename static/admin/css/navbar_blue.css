@@ -1,0 +1,173 @@
+@import "download_blue.css";
+@import "login_blue.css";
+@import "profile_blue.css";
+@import "home_blue.css";
+@import "greetings_blue.css";
+
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Staatliches', cursive;   
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/render_blue.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-position-y: 0px;
+    overflow: hidden;
+}
+
+
+.btn{
+    margin-top: 20px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive; 
+    text-decoration: none;
+    border: 1px solid rgb(2, 166, 207);
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(0, 140, 158);
+    transition-duration: 0.4s;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar{
+    width: 100%;
+    background-color: rgba(0 104 127 / 30%);
+    backdrop-filter: blur(2px);
+    color: white;
+    transition: all 499ms ease;
+}
+
+.navbar-brand{
+    float: left;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0.2cm 0.7cm;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 2vh;
+    cursor: default;
+}
+
+.navbar-nav{
+    margin: 0%;
+}
+
+.nav-item button{
+    border: none;
+    background-color: inherit;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-item button:focus{
+    border: none;
+    text-decoration: none;
+}
+
+.navbar .navbar-nav .nav-item{
+    display: inline;
+    list-style: none;
+}
+
+.navbar-nav .nav-item a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 0.9cm 0.7cm;
+    color: white;
+}
+
+.toggle-collapse{
+    float: right;
+    width: 45px;
+    height: 32px;
+    margin: 0.4cm 0.7cm;
+    background-color: transparent;
+    color: rgba(232, 232, 232, 0.699);
+    border: 1px solid rgba(232, 232, 232, 0.699);
+    cursor: pointer;
+    display: none;
+}
+
+.toggle-collapse:hover{
+    color: rgb(232, 232, 232);
+}
+
+.back{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-image: url('../../img/4685.jpg')
+
+}
+
+.logout{
+    float: right;
+}
+
+.profile{
+    float: right;
+}
+
+
+@media screen and (max-width: 540px){
+    .navbar-brand{
+        display: inline-block;
+        float: none;
+        margin: 1.5vh;
+        padding: 0.2cm 0.4cm;
+        font-size: 24px;
+    }
+
+    .toggle-collapse{
+        display: inline-block;
+    }
+    .navbar-nav{
+        color: white;
+        padding: 0%
+    }
+    .navbar .navbar-nav .nav-item{
+        display: block;
+        list-style: none;
+
+    }
+
+    .navbar-collapse{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        height: 0vh;
+        transition: all 499ms ease;
+    }
+
+    .collapse{
+        height: 100vh;
+    }
+
+    .bg{
+        background-color: rgba(0 104 127 / 30%);
+    }
+
+    .profile{
+        float: none;
+    }
+
+    .logout{
+        float: none;
+    }
+}

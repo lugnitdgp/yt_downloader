@@ -1,0 +1,8 @@
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url('https://doy2mn9upadnk.cloudfront.net/uploads/default/original/4X/5/5/e/55eb820d2b25943eebb751a4af708f67a01a7d6c.gif') no-repeat center;
+    z-index: 999;
+
+}

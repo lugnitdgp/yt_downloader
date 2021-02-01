@@ -1,17 +1,34 @@
-{% extends "home.html" %} {% block content %}
-
-<h2>Download:</h2>
+{% extends "base.html" %} {% block body_block %}
+<div class="download" id="do" >
+<h2 class="down">Download Videos</h2>
 <form class="form-inline" method="get">
   <div class="form-group">
-    <label for="URL">YouTube URL:</label>
-    <input type="url" name="url" class="form-control" id="email" />
-    <small id="emailHelp" class="form-text text-muted"
-      >Enter a valid YouTube URL.</small
-    >
+    <label class="yt item" for="URL">Enter YouTube Video Link </label>
+    <input type="url" name="url" class="item" id="email" />
+    <small id="emailHelp" class="item">Enter a valid YouTube URL.</small>
   </div>
-  <button type="submit" class="btn btn-default">Download</button>
+  <div class="but"><button onclick=" show() " type="submit" class="btn btn-default">Download</button></div>
 </form>
+</div>
 
+
+  <div class="body" id="MyDiv" style="display:none">
+    <div class="text">
+    Your Video is Downloading....<br>
+    Have Patience and make sure your internet is good...
+    </div>
+  </div>
+
+
+
+<script>
+  function show(){
+    const d = document.getElementById("MyDiv");
+    const h = document.getElementById("do");
+    d.style.display = "block";
+    h.style.display = "none";
+  }
+</script>
 {% if message %}
 <script>
   alert("{{ message }}");

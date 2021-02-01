@@ -1,0 +1,55 @@
+.instructions{
+    color: white;
+    margin: auto;
+    margin-top: 22vh;
+    background-color: rgba(0, 45, 71, 0.445);
+    backdrop-filter: blur(5px);
+    height: 40vh;
+    width: 40vw;
+    padding: 20px;
+    box-shadow: 0 0 40px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0);
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.instructions ul{
+    list-style-type: decimal;
+}
+
+.instructions li{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.instructions h1{
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+.instructions .link{
+    text-align: center;
+    text-decoration: none;
+    color:rgb(0, 131, 148);
+}
+
+.instructions .link:hover{
+    color: rgb(0, 206, 206);
+}
+
+@media screen and (max-width: 540px){
+    .instructions{
+        width: 100%;
+        margin: none;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .instructions li{
+        margin: 0;
+    }
+
+    .instructions h1{
+        margin: 0;
+    }
+}

@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block body_block %}
 
-<div class="jumbotron">
-  <h2>Login:</h2>
+<div class="Login">
+  <h2 class="log">Login</h2>
   <form method="post">
     {% csrf_token %}
     <div class="form-group">
@@ -13,9 +13,7 @@
         placeholder="Enter username"
         name="username"
       />
-      <small id="emailHelp" class="form-text text-muted"
-        >We'll never share your email with anyone else.</small
-      >
+      <div class="smol"><small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small></div>
     </div>
     <div class="form-group">
       <label>Password</label>
@@ -27,13 +25,16 @@
         placeholder="Password"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="but"><button type="submit" class="btn btn-primary">Login</button></div>
   </form>
+
+  <div class="new_user">New user? <br> <a href="{% url 'signup' %}">Click here to register!</a></div>
   {% if error %}
   <div class="alert aler-danger">
-    You need to register first!
+    Incorrect Credentials..<br>
+    
   </div>
-  <a href="{% url 'signup' %}">Click here to register!</a>
+  
   {% endif %}
 </div>
 {% endblock %}
